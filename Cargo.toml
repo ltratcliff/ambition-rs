@@ -10,5 +10,13 @@ tokio = { version = "1.43.0", features = ["macros", "rt-multi-thread"] }
 tracing = "0.1.41"
 rusqlite = "0.33.0"
 chrono = "0.4.39"
+minijinja = "1.0.10"
+tokio-cron-scheduler = "0.9.4"
 
 
+[profile.release]
+strip = true
+opt-level = "z"
+lto = true
+codegen-units = 1
+panic = "abort"
