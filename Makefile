@@ -20,7 +20,7 @@ build:
 # Build in release mode
 .PHONY: release
 release:
-	$(CARGO) build --release
+	docker run --rm -it --platform linux/amd64 -v $PWD:/app -w /app rust:latest cargo build --release
 
 # Build with MUSL target (statically linked)
 .PHONY: musl
